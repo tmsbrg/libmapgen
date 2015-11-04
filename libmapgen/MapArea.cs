@@ -20,7 +20,11 @@ namespace libmapgen
 		{
 			get
 			{
-				return _heightmap[0].Length;
+				if (height > 0) {
+					return _heightmap[0].Length;
+				} else {
+					return 0;
+				}
 			}
 		}
 

@@ -30,6 +30,15 @@ namespace libmapgen
 		}
 
 		[Test()]
+		public void EmptyMap ()
+		{
+			MapArea map = new MapArea (20, 0);
+
+			Assert.AreEqual (0, map.height);
+			Assert.AreEqual (0, map.width);
+		}
+
+		[Test()]
 		[ExpectedException(typeof(IndexOutOfRangeException))]
 		public void MapAreaWidthException()
 		{
