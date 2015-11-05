@@ -46,6 +46,8 @@
     <Compile Include="RandomHeightmap.cs" />
     <Compile Include="RandomGenerator.cs" />
     <Compile Include="RandomGeneratorTest.cs" />
+    <Compile Include="FlatHeightmap.cs" />
+    <Compile Include="FlatHeightmapTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
