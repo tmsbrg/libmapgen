@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace libmapgen
 {
+	[Serializable()]
 	public class Ruleset
 	{
 		public IInitialMapGenerator generator;
