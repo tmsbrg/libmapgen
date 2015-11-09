@@ -1,6 +1,7 @@
 using System;
 namespace libmapgen
 {
+	[Serializable()]
 	public class MapArea
 	{
         float[][] _heightmap;
