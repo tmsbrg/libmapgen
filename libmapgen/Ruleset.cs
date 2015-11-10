@@ -9,12 +9,17 @@ namespace libmapgen
 		public IInitialMapGenerator generator;
 		public List<IMapPass> passes;
 
-		public Ruleset ()
+		public Ruleset (IInitialMapGenerator g=null)
 		{
+			generator = (g != null) ? g :
+				        new FlatHeightmap (10, 10);
+			passes = new List<IMapPass> ();
 		}
 
 		public MapArea generate()
 		{
+			// TODO: exception or such if you don't have a generator
+			// or passes
 			MapArea map = generator.generate ();
 			foreach (var pass in passes)
 			{

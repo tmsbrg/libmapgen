@@ -3,8 +3,8 @@ namespace libmapgen
 {
 	public class FlatHeightmap : IInitialMapGenerator
 	{
-		int width;
-		int height;
+		public int width { get; set; }
+		public int height { get; set; }
 
 		public FlatHeightmap (int width, int height)
 		{

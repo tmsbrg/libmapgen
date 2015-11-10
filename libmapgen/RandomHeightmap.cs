@@ -3,8 +3,9 @@ namespace libmapgen
 {
 	public class RandomHeightmap : IInitialMapGenerator
 	{
-		int width;
-		int height;
+		public int width { get; set; }
+		public int height { get; set; }
+
 		float min;
 		float max;
 
