@@ -1,6 +1,7 @@
 using System;
 namespace libmapgen
 {
+	[Serializable()]
 	public class FlatHeightmap : IInitialMapGenerator
 	{
 		public int width { get; set; }
