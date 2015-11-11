@@ -49,6 +49,7 @@
     <Compile Include="FlatHeightmap.cs" />
     <Compile Include="FlatHeightmapTest.cs" />
     <Compile Include="RulesetTest.cs" />
+    <Compile Include="DummyPass.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
