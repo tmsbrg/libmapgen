@@ -19,7 +19,6 @@ namespace libmapgen
 		public MapArea generate()
 		{
 			// TODO: exception or such if you don't have a generator
-			// or passes
 			MapArea map = generator.generate ();
 			foreach (var pass in passes)
 			{
@@ -29,4 +28,3 @@ namespace libmapgen
 		}
 	}
 }
-
