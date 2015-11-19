@@ -1,5 +1,8 @@
+using System;
+
 namespace libmapgen
 {
+    [Serializable()]
 	public class DummyPass : IMapPass
 	{
 		public DummyPass () { }
@@ -9,4 +12,3 @@ namespace libmapgen
 		}
 	}
 }
-
