@@ -10,7 +10,7 @@ namespace libmapgen
 		float min;
 		float max;
 
-		public RandomHeightmap (int width, int height, float min, float max)
+		public RandomHeightmap (int width, int height, float min=0.0f, float max=1.0f)
 		{
 			this.width = width;
 			this.height = height;
