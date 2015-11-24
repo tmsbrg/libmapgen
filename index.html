@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Libmapgen : C# library for procedural map generation, actual code coming soon(tm)">
+    <meta name="description" content="Libmapgen : C# library for procedural map generation (very WIP)">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -19,7 +19,7 @@
           <a id="forkme_banner" href="https://github.com/tmsbrg/libmapgen">View on GitHub</a>
 
           <h1 id="project_title">Libmapgen</h1>
-          <h2 id="project_tagline">C# library for procedural map generation, actual code coming soon(tm)</h2>
+          <h2 id="project_tagline">C# library for procedural map generation (very WIP)</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/tmsbrg/libmapgen/zipball/master">Download this project as a .zip file</a>
@@ -34,7 +34,7 @@
         <h1>
 <a id="libmapgen" class="anchor" href="#libmapgen" aria-hidden="true"><span class="octicon octicon-link"></span></a>libmapgen</h1>
 
-<p>C# library for procedural map generation, actual code coming soon(tm)</p>
+<p>C# library for procedural map generation</p>
 
 <p>libmapgen is going to be a library that can be used to generate 2d tile-based maps procedurally, with ease. Using a series of passes, you can build a ruleset for generating a map by giving instructions like so:</p>
 
@@ -55,7 +55,30 @@
 <li>generate roads, made by pathfinding from town to town within a radius</li>
 </ul>
 
-<p>Something like that. Unity game engine integration is also planned. Initial implementation will be in C#, afterwards porting to C++ if there's enough time. libmapgen is part of my final school project.</p>
+<p>Something like that. Unity game engine integration is also being worked at on <a href="https://github.com/tmsbrg/Terrainstorm">Terrainstorm</a>. Initial implementation will be in C#, afterwards porting to C++ if there's enough time. libmapgen is part of my final school project.</p>
+<h1>Usage</h1>
+<pre>
+using libmapgen;
+
+Ruleset ruleset = new Ruleset(new RandomGenerator(10, 10, 0.0f, 1.0f)); // add initial generator
+ruleset.passes.Add(new FlattenPass()); // add 1 or more map passes
+MapArea map = ruleset.generate(); // generate map
+// use MapArea here
+</pre>
+<h1>Status</h1>
+<p>Basic generator/passes system is currently working. These generators are currently working:</p>
+<ul>
+    <li>RandomHeightmap (creates a map where every tile is a random height between a min and a max</li>
+    <li>FlatHeightmap (creates a flat map)</li>
+</ul>
+<p>These passes are implemented:</p>
+<ul>
+    <li>DummyPass (does nothing)</li>
+    <li>FlattenPass (flattens terrain below or above a certain threshold)</li>
+</ul>
+<p>Testing is currently badly done because I've been focusing more on functionality and I'll need to sit down to think about how I want it done a bit more. There's no guarantee of API stability at all, though the current structure seems like it could be a good one. I'll stabilize it some more when I have good results with this and <a href="https://github.com/tmsbrg/Terrainstorm">Terrainstorm</a>.</p>
+<h1>Contributing</h1>
+<p>The easiest way to contribute is to add a new IInitialGenerator or IMapPass.</p>
       </section>
     </div>
 
